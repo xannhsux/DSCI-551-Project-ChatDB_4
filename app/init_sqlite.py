@@ -1,4 +1,5 @@
 import os
+import sqlite3
 
 project_files = {
     "init_sqlite.py": '''\

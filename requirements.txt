@@ -1,6 +1,7 @@
+ollama
 fastapi
 uvicorn
 pymongo
 langchain
+sqlalchemy
 langchain-community
-ollama
