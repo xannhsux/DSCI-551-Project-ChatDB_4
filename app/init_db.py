@@ -12,5 +12,5 @@ def init_mongo():
 
 if __name__ == "__main__":
     init_mongo()
-    init_sqlite.init_sql()  # 调用 Google Drive 下载并初始化 SQLite 的逻辑
+    init_sqlite.init_sql()
 

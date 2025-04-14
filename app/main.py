@@ -29,7 +29,6 @@ def ask_sql(q: str = Query(...)):
 @app.get("/ask")
 def ask(q: str = Query(...)):
     try:
-        # 简单的逻辑来判断问题是针对 SQL 还是 MongoDB
         if any(keyword in q.lower() for keyword in ["sql", "database", "table", "select", "customers.db"]):
             result = answer_sql_question(q)
             return {"result": result}
