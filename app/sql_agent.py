@@ -1,5 +1,6 @@
 from langchain_community.llms import Ollama
-from langchain.chains import SQLDatabaseChain
+
+from langchain_community.chains.sql_database.base import SQLDatabaseChain
 from langchain.sql_database import SQLDatabase
 from .db_config import sql_engine
 

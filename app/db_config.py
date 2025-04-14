@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from sqlalchemy import create_engine
 
-MONGO_URI = "mongodb://mongodb:27017"
+MONGO_URI = "mongodb+srv://flightsdata:dsci551@flightsdata.y57hp.mongodb.net/"
 SQLITE_PATH = "/data/customers.db"
 
 mongo_client = MongoClient(MONGO_URI)

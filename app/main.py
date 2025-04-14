@@ -5,6 +5,10 @@ from .db_config import mongo_col
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the LLM Data Agent API"}
+
 @app.get("/ask/mongo")
 def ask_mongo(q: str = Query(...)):
     try:
@@ -19,5 +23,19 @@ def ask_sql(q: str = Query(...)):
     try:
         result = answer_sql_question(q)
         return {"result": result}
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.get("/ask")
+def ask(q: str = Query(...)):
+    try:
+        # 简单的逻辑来判断问题是针对 SQL 还是 MongoDB
+        if any(keyword in q.lower() for keyword in ["sql", "database", "table", "select", "customers.db"]):
+            result = answer_sql_question(q)
+            return {"result": result}
+        else:
+            query = nl_to_mongo_query(q)
+            result = list(mongo_col.find(query, {"_id": 0}))
+            return {"result": result}
     except Exception as e:
         return {"error": str(e)}
