@@ -14,7 +14,7 @@ llm = Ollama(model="llama3")  # Make sure you have 'ollama run llama3' running l
 
 # 2. SQL database connection (update with your own path or connection string)
 # Example for SQLite: sqlite:///path/to/your.db
-sql_db = SQLDatabase.from_uri("data/hotel.db")
+sql_db = SQLDatabase.from_uri("sqlite:///data/hotel.db")
 
 # 3. MongoDB connection (check your connection string in MongoDB Compass)
 # Replace with your own MongoDB Atlas URI if needed
