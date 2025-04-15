@@ -1,7 +1,10 @@
-ollama
+langchain==0.1.17
+langchain-community==0.0.36
+langchain-core==0.3.51
+langchain-ollama==0.3.1
 fastapi
 uvicorn
 pymongo
-langchain
+requests
 sqlalchemy
-langchain-community
+pydantic<2.0.0

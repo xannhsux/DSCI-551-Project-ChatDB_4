@@ -1,4 +1,5 @@
-from langchain_community.llms import Ollama
+# 尝试其他导入路径
+from langchain_community.llms.ollama import Ollama
 import json
 
 llm = Ollama(model="llama3")

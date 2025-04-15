@@ -8,8 +8,5 @@ RUN pip install --no-cache-dir gradio requests
 # copy gradio app
 COPY app/gradio_app.py .
 
-# set environment
-ENV API_URL=http://api:8000
-
 #run application
 CMD ["python", "gradio_app.py"]

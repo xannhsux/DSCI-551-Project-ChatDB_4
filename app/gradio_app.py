@@ -1,4 +1,4 @@
-from langchain_community.llms import Ollama
+from langchain_community.llms.ollama import Ollama
 from sqlalchemy import text
 from .db_config import sql_engine
 
